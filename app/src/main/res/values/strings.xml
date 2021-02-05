@@ -90,4 +90,10 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="merchant_name">Merchat Name</string>
+    <string name="amount">Amount</string>
+    <string name="timestamp">Date</string>
+    <string name="uuid">Uuid Transaction</string>
+    <string name="currency">USD</string>
+    <string name="merchantUuid">Merchant Uuid</string>
 </resources>

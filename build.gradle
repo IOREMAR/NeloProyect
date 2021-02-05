@@ -6,7 +6,7 @@ buildscript {
           kotlinVersion = '1.4.20'
           appCompatVersion = "1.1.0"
           recyclerVersion = "1.1.0-rc01"
-          materialVersion = "1.1.0-beta01"
+          materialVersion = "1.2.0-alpha03"
           navigationVersion = "2.2.2"
           constraintLayoutVersion = "2.0.0-beta3"
           retrofitLibrary = "2.9.0"

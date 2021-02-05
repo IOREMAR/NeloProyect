@@ -1,11 +1,11 @@
-package com.example.neloproyect.fragmenttransaction.DAOs
+package com.example.neloproyect.fragmenttransaction.daos
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class TransactionsDao(
-    val uuid: Long,
+    val uuid: String,
     val merchantUuid: String,
     val merchantName: String,
     val currencyCode: String,

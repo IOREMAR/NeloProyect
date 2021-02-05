@@ -1,6 +1,7 @@
 package com.example.neloproyect.fragmenttransaction
 
-import com.example.neloproyect.fragmenttransaction.DAOs.TransactionsDao
+import com.example.neloproyect.fragmenttransaction.daos.TransactionsDao
+import com.example.neloproyect.fragmenttransaction.daos.TransactionsObjectDao
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -39,14 +40,14 @@ object TransactionNetwork {
         TransactionsService = retrofit.create(TransactionsApi::class.java)
     }
 
-
-    suspend fun getTransactionsService() : List<TransactionsDao>? {
+    @Throws(Exception::class)
+    suspend fun getTransactionsService()  : TransactionsObjectDao {
         return TransactionsService.getTransactions(URL_Serivce)
     }
 
     interface  TransactionsApi {
         @GET
-        suspend fun getTransactions(@Url UrlService: String): List<TransactionsDao>?
+        suspend fun getTransactions(@Url UrlService: String): TransactionsObjectDao
     }
 
 }
