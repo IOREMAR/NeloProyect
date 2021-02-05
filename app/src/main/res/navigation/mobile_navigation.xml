@@ -7,7 +7,7 @@
 
     <fragment android:id="@+id/fragmentTransactions"
         android:label="Blank"
-        android:name="com.example.neloproyect.fragment_transactions"
+        android:name="com.example.neloproyect.fragmenttransaction.fragment_transactions"
         tools:layout="@layout/fragment_transactions"
         />
 </navigation>

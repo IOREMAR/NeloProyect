@@ -1,11 +1,20 @@
 plugins {
      id 'com.android.application'
      id 'kotlin-android'
+     id 'kotlin-kapt'
+     id 'kotlin-parcelize'
 }
 
 android {
      compileSdkVersion 30
      buildToolsVersion "30.0.0"
+
+
+     buildFeatures{
+               dataBinding = true
+     }
+
+
 
      defaultConfig {
           applicationId "com.example.neloproyect"
@@ -30,7 +39,10 @@ android {
      kotlinOptions {
           jvmTarget = '1.8'
      }
+
 }
+
+
 
 dependencies {
 
@@ -53,4 +65,12 @@ dependencies {
      //Navigation
      implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigationVersion"
      implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigationVersion"
+
+     //Retrofit
+     implementation "com.squareup.retrofit2:retrofit:$retrofitLibrary"
+     implementation "com.squareup.retrofit2:converter-gson:$retrofitLibrary"
+     implementation "com.squareup.retrofit2:converter-scalars:$retrofitLibrary"
+
+     //Interceptor
+     implementation 'com.squareup.okhttp3:logging-interceptor:4.8.0'
 }
