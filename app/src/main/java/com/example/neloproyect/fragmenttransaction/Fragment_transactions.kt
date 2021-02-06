@@ -27,11 +27,11 @@ class fragment_transactions : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         transactionViewModel = ViewModelProvider(this, TransactionViewModel.FACTORY(TransactionsRespository()))
-            .get(TransactionViewModel::class.java)
+            .get(TransactionViewModel::class.java) //Creates with ViewModel With this Repository
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = this   //Add the owner of the view
 
-        binding.viewModel = transactionViewModel
+        binding.viewModel = transactionViewModel // Add the ViewModel to the Binding
 
         transactionViewModel.listTransactions()
 

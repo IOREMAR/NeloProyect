@@ -1,5 +1,6 @@
 package com.example.neloproyect.fragmenttransaction
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,10 @@ class TransactionViewModel (private val repository :  TransactionsRespository ) 
     val loading: LiveData<LoadingState> get() = _loading
 
 
+    private val _txtMensaje = MutableLiveData<String>()
+
+    val txtMensaje: LiveData<String> get() = _txtMensaje
+
     companion   object {
         /**
          * Factory for creating [TransactionViewModel]
@@ -32,6 +37,9 @@ class TransactionViewModel (private val repository :  TransactionsRespository ) 
     }
 
 
+    /**
+     * Implements the consult of ListTransactions with the LiveData connection.
+      */
     fun listTransactions(){
         viewModelScope.launch(Dispatchers.IO) {
             try {
@@ -40,8 +48,10 @@ class TransactionViewModel (private val repository :  TransactionsRespository ) 
                 MutableListTransactions.postValue(listTransacitonsvar)
                 _loading.postValue(LoadingState.LOADED)
             }
-            catch ( Exe : Exception){
-                _loading.postValue(LoadingState.error(Exe.message))
+            catch ( exe : Exception){
+                Log.e("Error",exe.message!!)
+                _txtMensaje.postValue(exe.message)
+                _loading.postValue(LoadingState.error(exe.message))
             }
 
         }

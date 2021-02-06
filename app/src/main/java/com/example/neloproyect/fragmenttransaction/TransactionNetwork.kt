@@ -1,6 +1,5 @@
 package com.example.neloproyect.fragmenttransaction
 
-import com.example.neloproyect.fragmenttransaction.daos.TransactionsDao
 import com.example.neloproyect.fragmenttransaction.daos.TransactionsObjectDao
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -15,12 +14,15 @@ object TransactionNetwork {
     private val URL_Serivce = "https://storage.googleapis.com/nelo-assigment/api/transactions.json"
 
 
-    private  lateinit var TransactionsService: TransactionsApi
+    lateinit var TransactionsService: TransactionsApi
 
     init {
         createTransactionService()
     }
 
+    /**
+     * Creates the Retrofit Client Prepare the TransactionService to Use.
+     */
     private fun createTransactionService() {
 
         // Creamos un interceptor y le indicamos el log level a usar
@@ -40,7 +42,6 @@ object TransactionNetwork {
         TransactionsService = retrofit.create(TransactionsApi::class.java)
     }
 
-    @Throws(Exception::class)
     suspend fun getTransactionsService()  : TransactionsObjectDao {
         return TransactionsService.getTransactions(URL_Serivce)
     }

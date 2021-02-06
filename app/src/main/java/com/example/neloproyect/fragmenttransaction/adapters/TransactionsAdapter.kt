@@ -8,10 +8,15 @@ import com.example.neloproyect.fragmenttransaction.daos.TransactionsDao
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * @TransactionsAdapter Is the Binding adapter for the Transaction Data.
+ */
 class TransactionsAdapter (private val data : List<TransactionsDao>) : RecyclerView.Adapter<TransactionsAdapter.ViewHolderAdapter>() {
 
     inner class ViewHolderAdapter(val binding: TransactionsItemBinding) : RecyclerView.ViewHolder(binding.root) {
-
+        /**
+         * @bind Uses Item : @TransactionsDao to asing the Data to the View By DataBinding ->  @dataItem
+         */
         fun bind(item: TransactionsDao?) {
             binding.dataItem = item
             binding.txtDate.text = getDateTime(item!!.timestamp)
@@ -27,13 +32,11 @@ class TransactionsAdapter (private val data : List<TransactionsDao>) : RecyclerV
                 return e.toString()
             }
         }
-
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderAdapter {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = TransactionsItemBinding.inflate(inflater,parent,true)
+        val binding = TransactionsItemBinding.inflate(inflater,parent,false)
         return ViewHolderAdapter(binding)
     }
 

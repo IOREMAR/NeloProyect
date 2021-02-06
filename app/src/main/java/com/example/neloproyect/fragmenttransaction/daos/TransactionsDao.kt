@@ -3,6 +3,15 @@ package com.example.neloproyect.fragmenttransaction.daos
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
+/**
+ * @TransactionsDao Is the TransactionObject. :
+ * @uuid :The uuid representing the transaction.
+ * @merchantUuid :The uuid representing the merchant.
+ * @merchantName :Merchant Name
+ * @currencyCode :The currency code of the transaction.
+ * @amount :Amount
+ * @timestamp :The timestamp UTC of the transaction.
+ */
 @Parcelize
 data class TransactionsDao(
     val uuid: String,
@@ -12,11 +21,3 @@ data class TransactionsDao(
     val amount: Int,
     val timestamp: Long
 ) : Parcelable
-
-/*
-"uuid": "96a6ccbb-0de6-4641-b089-276ff8c0622d",
-"merchantUuid": "64deb0be-668d-4218-83d1-174496601483",
-"merchantName": "Starbucks Coffee",
-"currencyCode": "USD",
-"amount": 400,
-"timestamp": 1611847753*/

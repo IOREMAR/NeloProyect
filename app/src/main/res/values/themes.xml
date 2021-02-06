@@ -15,6 +15,15 @@
     </style>
 
 
+    <style name="base_cardview" parent="Base.CardView">
+        <item name="cardCornerRadius">5dp</item>
+        <item name="cardElevation">5dp</item>
+        <item name="cardMaxElevation">5dp</item>
+        <item name="cardUseCompatPadding">false</item>
+        <item name="cardPreventCornerOverlap">true</item>
+    </style>
+
+
     <style name="Theme.NeloProyect.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.NeloProyect.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

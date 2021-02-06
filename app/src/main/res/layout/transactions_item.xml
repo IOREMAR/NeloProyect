@@ -12,10 +12,12 @@
 
           <com.google.android.material.card.MaterialCardView
             android:id="@+id/baseCardView"
-            style="@style/Widget.MaterialComponents.CardView"
+              android:theme="@style/base_cardview"
+              app:strokeColor="#D0D0D0"
+              app:strokeWidth="1dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="?attr/waveShape"
+            app:cardBackgroundColor="@color/white"
             android:layout_margin="@dimen/padding_xlarge"
             >
 
@@ -36,7 +38,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     android:textStyle="normal"
                     android:textSize="@dimen/TextInfoCardView_xxlarge"
-                    tools:text="@string/merchant_name"
+                    android:text="@string/merchant_name"
                     android:textColor="@color/teal_700"
                     />
 
@@ -68,7 +70,7 @@
                     android:layout_marginTop="@dimen/padding_small"
                     android:textStyle="normal"
                     android:textSize="@dimen/TextInfoCardView_xxlarge"
-                    tools:text="@string/amount"
+                    android:text="@string/amount"
                     android:textColor="@color/teal_700"
                     />
 
@@ -85,7 +87,7 @@
                     android:textStyle="bold"
                     android:textSize="@dimen/TextInfoCardView_xxxlarge"
                     tools:text="435000"
-                    android:text="@{dataItem.amount}"
+                    android:text="@{String.valueOf(dataItem.amount)}"
                     android:textColor="@color/black"
                     />
 
@@ -115,7 +117,7 @@
                     android:layout_marginTop="@dimen/padding_small"
                     android:textStyle="normal"
                     android:textSize="@dimen/TextInfoCardView_xxlarge"
-                    tools:text="@string/timestamp"
+                    android:text="@string/timestamp"
                     android:textColor="@color/teal_700"
                     />
 
@@ -146,7 +148,7 @@
                     android:layout_marginTop="@dimen/padding_small"
                     android:textStyle="normal"
                     android:textSize="@dimen/TextInfoCardView_xxlarge"
-                    tools:text="@string/merchantUuid"
+                    android:text="@string/merchantUuid"
                     android:textColor="@color/teal_700"
                     />
 
@@ -181,7 +183,7 @@
                     android:layout_marginTop="@dimen/padding_small"
                     android:textStyle="normal"
                     android:textSize="@dimen/TextInfoCardView_xxlarge"
-                    tools:text="@string/uuid"
+                    android:text="@string/uuid"
                     android:textColor="@color/teal_700"
                     />
 

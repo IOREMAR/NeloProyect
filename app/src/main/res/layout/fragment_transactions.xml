@@ -7,7 +7,7 @@
         <data>
                 <variable
                     name="viewModel"
-                    type="com.example.neloproyect.fragmenttransaction.TransactionViewModel" />
+                    type="com.example.neloproyect.fragmenttransaction.TransactionViewModel"/>
         </data>
 
         <androidx.core.widget.NestedScrollView
@@ -27,6 +27,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:listitem="@layout/transactions_item"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
                     app:setupRecyclerView="@{viewModel.liveListTransactions}"
 
                     />
@@ -43,6 +44,23 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+                <TextView
+                    android:id="@+id/txt_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="@dimen/TextInfoCardView_xxlarge"
+                    tools:text="Error"
+                    app:setupVisibilityTextView="@{viewModel.loading}"
+                    android:text="@{viewModel.txtMensaje}"
+                    >
+
+                </TextView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
